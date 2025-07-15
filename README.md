@@ -107,6 +107,6 @@ npm run build
 - 需有 RPM 构建环境权限
 - Python 版本 3.7 及以上
 
-## 版权
+## 许可证
 
-&copy; 2025 https://github.com/wanghongwei-dev. All Rights Reserved. 
+本项目采用MIT License，详见LICENSE文件。
