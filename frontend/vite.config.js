@@ -10,7 +10,6 @@ export default defineConfig({
     },
     allowedHosts: [
       'bass-needed-weekly.ngrok-free.app',
-      '192.168.200.143',
       'localhost',
       '127.0.0.1'
     ]
