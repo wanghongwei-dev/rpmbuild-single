@@ -199,7 +199,7 @@ export default function App() {
           {log || "构建日志将在此处显示..."}
         </div>
       </div>
-      <div style={{ textAlign: "center", color: "#64748b", marginTop: 24, fontSize: 14 }}>
+      <div style={{ textAlign: "center", color: "#64748b", marginTop: 8, fontSize: 14, paddingBottom: 16 }}>
         Copyright &copy; {new Date().getFullYear()} WangHongwei. All Rights Reserved.
       </div>
     </div>
