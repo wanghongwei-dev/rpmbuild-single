@@ -28,17 +28,23 @@ def download_zip(filename):
 
 @socketio.on("start_build")
 def handle_build(data):
-    input_val = data.get("input")
+    repo_url = data.get("repo_url")
     branch = data.get("branch")
     sid = request.sid
 
-    if not input_val or not branch:
-        socketio.emit("log", {"log": "参数错误\n"}, room=sid)
+    if set(data.keys()) - {"repo_url", "branch"}:
+        socketio.emit("log", {"log": "参数错误：只允许仓库URL和分支名\n"}, room=sid)
+        socketio.emit("done", {"zip_url": ""}, room=sid)
+        return
+
+    if not repo_url or not branch:
+        socketio.emit("log", {"log": "参数错误：仓库URL和分支名不能为空\n"}, room=sid)
+        socketio.emit("done", {"zip_url": ""}, room=sid)
         return
 
     def run_build(sid):
         written_files = []
-        cmd = ["bash", "../rpmbuild_beta.sh", input_val, branch]
+        cmd = ["bash", "../rpmbuild.sh", repo_url, branch]
         proc = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
         for line in iter(proc.stdout.readline, ''):
             socketio.emit("log", {"log": line}, room=sid)
@@ -54,7 +60,7 @@ def handle_build(data):
         if written_files:
             # 按时间排序
             written_files.sort(key=lambda x: os.path.getmtime(x))
-            pkg_name = input_val.strip().split('/')[-1].replace('.git','') if '/' in input_val else input_val.strip()
+            pkg_name = repo_url.strip().split('/')[-1].replace('.git','') if '/' in repo_url else repo_url.strip()
             timestamp = int(time.time())
             zip_name = f"{pkg_name}_{timestamp}.zip"
             zip_path = os.path.join(ZIP_OUTPUT_DIR, zip_name)
