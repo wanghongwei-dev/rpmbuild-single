@@ -200,7 +200,7 @@ export default function App() {
         </div>
       </div>
       <div style={{ textAlign: "center", color: "#64748b", marginTop: 24, fontSize: 14 }}>
-        &copy; {new Date().getFullYear()} 汪宏伟. All Rights Reserved.
+        &copy; {new Date().getFullYear()} https://github.com/wanghongwei-dev. All Rights Reserved.
       </div>
     </div>
   );
