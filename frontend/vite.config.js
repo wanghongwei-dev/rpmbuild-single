@@ -8,11 +8,7 @@ export default defineConfig({
       '/socket.io': 'http://localhost:5000',
       '/download': 'http://localhost:5000'
     },
-    allowedHosts: [
-      'bass-needed-weekly.ngrok-free.app',
-      'localhost',
-      '127.0.0.1'
-    ]
+    host: true
   },
   build: {
     outDir: '../frontend/dist'
