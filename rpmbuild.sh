@@ -10,7 +10,7 @@
 set -e
 
 # 一次性初始化
-# yum install -y git rpm-build rpmdevtools dnf-plugins-core
+# yum install -y git rpm-build rpmdevtools yum-utils dnf-plugins-core
 # rpmdev-setuptree
 
 # 检查参数数量
