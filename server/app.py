@@ -15,7 +15,7 @@ app = Flask(__name__, static_folder="../frontend/dist", static_url_path="/")
 socketio = SocketIO(app, cors_allowed_origins="*")
 
 RPMBUILD_RPMS = os.path.expanduser("~/rpmbuild/RPMS")
-ZIP_OUTPUT_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "ZIPPKGS")
+ZIP_OUTPUT_DIR = os.path.expanduser("/tmp/ZIPPKGS")
 os.makedirs(ZIP_OUTPUT_DIR, exist_ok=True)
 
 @app.route("/")
