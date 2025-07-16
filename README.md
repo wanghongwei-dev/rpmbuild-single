@@ -15,7 +15,8 @@ rpmbuild/
 │   └── vite.config.js
 ├── server/           # 后端 Flask + SocketIO 服务
 │   ├── app.py
-│   └── requirements.txt
+│   ├── requirements.txt
+│   └── startup.sh
 └── rpmbuild.sh       # RPM 构建核心 Shell 脚本
 ```
 
@@ -30,7 +31,7 @@ rpmbuild/
 ### 1. RPM 构建环境（建议在 CentOS/RHEL/openEuler 等 RPM 系 Linux 下运行）
 
 ```bash
-sudo yum install -y git rpm-build rpmdevtools dnf-plugins-core
+sudo yum install -y git rpm-build rpmdevtools yum-utils dnf-plugins-core
 rpmdev-setuptree
 ```
 
