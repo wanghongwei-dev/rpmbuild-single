@@ -17,6 +17,8 @@ rpmbuild/
 │   ├── app.py
 │   ├── requirements.txt
 │   └── startup.sh
+├── LICENSE
+├── README.md
 └── rpmbuild.sh       # RPM 构建核心 Shell 脚本
 ```
 
