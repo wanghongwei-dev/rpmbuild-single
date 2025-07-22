@@ -19,10 +19,11 @@ rpmbuild/
 ├── server/           # 后端 Flask + SocketIO 服务
 │   ├── app.py
 │   ├── requirements.txt
+│   ├── rpmbuild.sh   # RPM 构建核心 Shell 脚本
+│   ├── shutdown.sh
 │   └── startup.sh
 ├── LICENSE
-├── README.md
-└── rpmbuild.sh       # RPM 构建核心 Shell 脚本
+└── README.md
 ```
 
 ## 功能简介

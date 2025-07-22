@@ -44,7 +44,7 @@ def handle_build(data):
 
     def run_build(sid):
         written_files = []
-        cmd = ["bash", "../rpmbuild.sh", repo_url, branch]
+        cmd = ["bash", "rpmbuild.sh", repo_url, branch]
         proc = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
         for line in iter(proc.stdout.readline, ''):
             socketio.emit("log", {"log": line}, room=sid)
