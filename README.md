@@ -3,7 +3,7 @@
 ## 项目简介
 本项目是一个前后端分离的 Web 系统，支持通过输入 Git 仓库 URL 和分支名，一键自动拉取源码并构建 RPM 包，支持实时日志推送和 RPM 包打包下载。适合用于部署在单个系统上，快速出包。
 
-<img width="825" height="391" alt="企业微信截图_17531536996256" src="https://github.com/user-attachments/assets/47ea9cab-b721-45db-ae3e-bd575fbf0fdd" />
+<img width="1603" height="831" alt="image" src="https://github.com/user-attachments/assets/ec9a3443-69bb-4138-87f0-d083f9719e43" />
 
 ## 目录结构
 
